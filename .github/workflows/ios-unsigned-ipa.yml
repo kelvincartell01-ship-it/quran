@@ -1,0 +1,64 @@
+name: Unsigned iOS Release IPA
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-unsigned-ipa:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.2
+          channel: stable
+          cache: true
+
+      - name: Resolve dependencies
+        run: flutter pub get
+
+      - name: Build unsigned iOS app
+        run: flutter build ios --release --no-codesign
+
+      - name: Package and verify unsigned IPA
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          app_path="build/ios/iphoneos/Runner.app"
+          test -d "$app_path"
+          test -f "$app_path/Info.plist"
+
+          if /usr/bin/codesign -dv "$app_path" >/dev/null 2>&1; then
+            echo "Runner.app unexpectedly has a code signature."
+            exit 1
+          fi
+
+          staging_dir="$RUNNER_TEMP/unsigned-ipa"
+          mkdir -p "$staging_dir/Payload" "$GITHUB_WORKSPACE/dist"
+          ditto "$app_path" "$staging_dir/Payload/Runner.app"
+          (
+            cd "$staging_dir"
+            /usr/bin/zip -qry "$GITHUB_WORKSPACE/dist/Quran-unsigned.ipa" Payload
+          )
+
+          /usr/bin/unzip -Z1 dist/Quran-unsigned.ipa \
+            | /usr/bin/grep -Fxq 'Payload/Runner.app/Info.plist'
+
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: quran-unsigned-release-ipa
+          path: dist/Quran-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 14

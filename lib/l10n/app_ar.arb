@@ -1,0 +1,222 @@
+{
+  "@@locale": "ar",
+  "applicationTitle": "القرآن",
+  "applicationSubtitle": "مساحة هادئة للقرآن",
+  "navQuran": "القرآن",
+  "navChannels": "القنوات",
+  "navSettings": "الإعدادات",
+  "quranWelcome": "رحلتك مع القرآن",
+  "quranWelcomeBody": "مساحة هادئة للقراءة والاستماع والتدبر.",
+  "quranContentUnavailable": "ستتوفر قراءة القرآن هنا في تحديث قادم.",
+  "channelsTitle": "القنوات",
+  "channelsDescription": "اختر صفحة البث الرسمية لإحدى قناتي المدينتين المقدستين.",
+  "makkahLiveName": "مكة مباشر",
+  "makkahLiveDescription": "بث مباشر من المسجد الحرام.",
+  "madinahLiveName": "المدينة المنورة مباشر",
+  "madinahLiveDescription": "بث مباشر من المسجد النبوي.",
+  "officialBroadcasterLabel": "الجهة الرسمية",
+  "openOfficialLivePage": "فتح صفحة البث الرسمية",
+  "openingOfficialLivePage": "جارٍ فتح الصفحة الرسمية…",
+  "officialLivePageLabel": "هيئة الإذاعة والتلفزيون السعودية (SBA) · صفحة العلا للبث",
+  "channelInAppPlaybackUnverified": "تعذر التحقق من بث رسمي حالي داخل التطبيق. لن نعرض بثاً غير متحقق منه أو شارة LIVE؛ استخدم الصفحة الرسمية للجهة الناقلة.",
+  "officialLivePageOpenError": "تعذر فتح صفحة البث الرسمية. تحقق من اتصالك وحاول مجدداً.",
+  "channelAudioPauseError": "تعذر إيقاف تلاوة القرآن مؤقتاً، لذلك لم تُفتح صفحة القناة.",
+  "settingsTitle": "الإعدادات",
+  "languageSection": "اللغة",
+  "languageLabel": "لغة التطبيق",
+  "languageSorani": "الكردية السورانية",
+  "languageArabic": "العربية",
+  "languageEnglish": "الإنجليزية",
+  "appearanceSection": "المظهر",
+  "themeLabel": "السمة",
+  "themeSystem": "النظام",
+  "themeLight": "فاتح",
+  "themeDark": "داكن",
+  "readingSection": "القراءة",
+  "quranFontSize": "حجم نص القرآن",
+  "fontSizeValue": "{size}",
+  "@fontSizeValue": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "preferenceSaveError": "تعذر حفظ تفضيلك. يرجى المحاولة مرة أخرى.",
+  "fontPreparationNote": "يستخدم التطبيق خط Amiri Quran بترخيص SIL OFL 1.1؛ ولا يعني اسمه أنه خط حفص رسمي.",
+  "soraniFrameworkLocalizationNote": "تستخدم عناصر Flutter الداخلية النصوص العربية في وضع السورانية لعدم توفر ترجمة سورانية لها في Flutter.",
+  "surahsHeading": "سور القرآن",
+  "surahCount": "{count, plural, zero{لا سور} one{سورة واحدة} two{سورتان} few{# سور} many{# سورة} other{# سورة}}",
+  "@surahCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchSurahs": "ابحث بالاسم أو الرقم",
+  "clearSearch": "مسح البحث",
+  "noSurahsFound": "لا توجد سور تطابق بحثك.",
+  "surahLoadError": "تعذر تحميل معلومات السور.",
+  "retry": "إعادة المحاولة",
+  "surahDetailTitle": "تفاصيل السورة",
+  "surahNotFound": "لم يتم العثور على هذه السورة.",
+  "surahNumber": "السورة {number}",
+  "@surahNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "surahNumberLabel": "الرقم",
+  "verseCountLabel": "عدد الآيات",
+  "verseCount": "{count, plural, zero{لا آيات} one{آية واحدة} two{آيتان} few{# آيات} many{# آية} other{# آية}}",
+  "@verseCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "revelationOrderLabel": "ترتيب النزول",
+  "makki": "مكية",
+  "madani": "مدنية",
+  "surahDetailComingSoon": "ستضاف آيات القرآن وميزات القراءة في مرحلة لاحقة.",
+  "quranReaderTitle": "قراءة القرآن",
+  "quranReaderLoadError": "تعذر تحميل نص القرآن أو معانيه بالسورانية.",
+  "verseMeaningLabel": "معنى الآية",
+  "verseNumber": "الآية {number}",
+  "@verseNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "increaseQuranFontSize": "تكبير خط القرآن",
+  "decreaseQuranFontSize": "تصغير خط القرآن",
+  "audioPlayerTitle": "تلاوة القرآن",
+  "audioPlaybackUnavailable": "يتوفر تشغيل الصوت على Android وiOS.",
+  "selectReciter": "القارئ",
+  "playSurah": "تشغيل السورة",
+  "resumeAudio": "استئناف التلاوة",
+  "pauseAudio": "إيقاف التلاوة مؤقتاً",
+  "playFromVerse": "التشغيل من الآية {verse}",
+  "@playFromVerse": {
+    "placeholders": {
+      "verse": {
+        "type": "int"
+      }
+    }
+  },
+  "previousVerse": "الآية السابقة",
+  "nextVerse": "الآية التالية",
+  "repeatModeLabel": "وضع التكرار",
+  "repeatOff": "التكرار متوقف",
+  "repeatSurah": "تكرار السورة",
+  "repeatVerse": "تكرار الآية",
+  "audioLoading": "جارٍ تحميل التلاوة…",
+  "audioPlaybackError": "تعذر تشغيل الصوت. تحقق من الاتصال وحاول مجدداً.",
+  "audioPermissionDenied": "اسمح بالإشعارات لإظهار عناصر التحكم بالتشغيل.",
+  "audioProgressLabel": "تقدم التلاوة",
+  "showAudioControls": "إظهار عناصر التحكم بالصوت",
+  "hideAudioControls": "إخفاء عناصر التحكم بالصوت",
+  "audioStreamingAttribution": "الصوت من Al Quran Cloud؛ استمع عبر الإنترنت أو نزّل السور للاستماع دون اتصال.",
+  "downloadSection": "تنزيلات الصوت",
+  "downloadReciter": "القارئ للتنزيل",
+  "downloadSurahAction": "تنزيل هذه السورة",
+  "downloadQuranAction": "تنزيل السور الـ 114",
+  "downloadAllConfirmationTitle": "تنزيل القرآن كاملاً؟",
+  "downloadAllConfirmationBody": "ستتم إضافة السور الـ 114 للقارئ {reciter} إلى قائمة التنزيل. سيستخدم التنزيل بيانات الهاتف ومساحة التخزين؛ يُنصح باستخدام Wi‑Fi. لن يبدأ شيء قبل التأكيد.",
+  "@downloadAllConfirmationBody": {
+    "placeholders": {
+      "reciter": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadSizeUnavailable": "لا يتوفر تقدير موثوق للحجم الإجمالي قبل طلب الملفات الصوتية.",
+  "downloadQueued": "أُضيف التنزيل إلى القائمة.",
+  "downloadProgress": "تم التحقق من {completed} من {total} آية",
+  "@downloadProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadBatchProgress": "اكتملت {completed} من {total} سورة",
+  "@downloadBatchProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadCurrentSurah": "الحالي: السورة {surah}، الآية {verse}",
+  "@downloadCurrentSurah": {
+    "placeholders": {
+      "surah": {
+        "type": "int"
+      },
+      "verse": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadCurrentFileProgress": "بايتات الآية الحالية: {received} / {total}",
+  "@downloadCurrentFileProgress": {
+    "placeholders": {
+      "received": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadWaiting": "في الانتظار",
+  "downloadDownloading": "جارٍ التنزيل",
+  "downloadPaused": "متوقف مؤقتاً",
+  "downloadCompleted": "تم التنزيل",
+  "downloadFailed": "غير مكتمل — أعد تنزيل الآيات الفاشلة",
+  "downloadCancelled": "أُلغي",
+  "downloadNotDownloaded": "لم يتم التنزيل",
+  "downloadPauseAll": "إيقاف الكل مؤقتاً",
+  "downloadResumeAll": "استئناف الكل",
+  "downloadCancelAll": "إلغاء الكل",
+  "downloadPause": "إيقاف التنزيل مؤقتاً",
+  "downloadResume": "استئناف التنزيل",
+  "downloadCancel": "إلغاء التنزيل",
+  "downloadRetry": "إعادة تنزيل الآيات الفاشلة",
+  "downloadDelete": "حذف",
+  "downloadDeleteAll": "مسح كل الصوت المنزّل",
+  "downloadDeleteAllConfirmation": "هل تريد حذف كل صوت القرآن المنزّل من هذا الجهاز؟ لا يمكن التراجع عن ذلك.",
+  "downloadDeleteReciter": "حذف تنزيلات هذا القارئ",
+  "downloadStorageUsed": "المساحة المستخدمة: {size}",
+  "@downloadStorageUsed": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadedSurahs": "السور المنزّلة",
+  "downloadNoItems": "لا توجد ملفات صوتية منزّلة بعد.",
+  "downloadSourceAttribution": "الملفات الصوتية من Al Quran Cloud (مع الاحتفاظ بمعرّفات الإصدارات) للاستماع الشخصي والتعليمي. حقوق التلاوات محفوظة للقراء أو أصحاب الحقوق. https://alquran.cloud/cdn · https://alquran.cloud/terms-and-conditions",
+  "offlineAudioNotDownloaded": "هذه الآية غير منزّلة للقارئ المحدد. اتصل بالإنترنت أو نزّل هذه السورة للاستماع دون اتصال.",
+  "downloadOperationError": "تعذر إكمال التنزيل. تحقق من الاتصال ومساحة التخزين المتاحة ثم حاول مرة أخرى.",
+  "aboutSection": "حول التطبيق",
+  "dataAttributionTitle": "المصادر والتراخيص",
+  "surahMetadataAttribution": "بيانات السور من بيانات تنـزيل، الإصدار 1.0، بترخيص CC BY. تمت مراجعة أعداد الآيات ومكان النزول عبر Quran.com API v4. https://tanzil.net/docs/Quran_Metadata",
+  "quranTextAttribution": "نص القرآن من مشروع تنـزيل، الإصدار 1.1. حقوق النشر © 2007–2026 لمشروع تنـزيل. ترخيص CC BY 3.0؛ نُقل النص حرفياً دون تعديل. https://tanzil.net/docs/Text_License",
+  "soraniDataAttribution": "Holy Quran Kurdish Sorani Translation Dataset (HQKSTD). المساهمون: Shakhawan Hares Wady وMhamad Bamoki وSoran Badawi. DOI: 10.17632/byyjd7kmvd.1. ترخيص CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ المصدر: https://data.mendeley.com/datasets/byyjd7kmvd/1. حُوّلت البيانات إلى تنسيق JSON محلي للتطبيق.",
+  "quranFontAttribution": "خط Amiri Quran، مشروع Amiri، الإصدار 1.003. ترخيص SIL Open Font License 1.1. https://github.com/aliftype/amiri"
+}

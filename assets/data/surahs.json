@@ -1,0 +1,922 @@
+{
+    "schemaVersion":  1,
+    "source":  "Tanzil Quran Metadata",
+    "sourceUrl":  "https://tanzil.net/res/text/metadata/quran-data.xml",
+    "sourceVersion":  "1.0",
+    "sourceLicense":  "CC BY",
+    "revelationTypeVerificationSource":  "https://api.quran.com/api/v4/chapters?language=en",
+    "surahs":  [
+                   {
+                       "number":  1,
+                       "arabicName":  "الفاتحة",
+                       "transliteration":  "Al-Faatiha",
+                       "verseCount":  7,
+                       "revelationOrder":  5,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  2,
+                       "arabicName":  "البقرة",
+                       "transliteration":  "Al-Baqara",
+                       "verseCount":  286,
+                       "revelationOrder":  87,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  3,
+                       "arabicName":  "آل عمران",
+                       "transliteration":  "Aal-i-Imraan",
+                       "verseCount":  200,
+                       "revelationOrder":  89,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  4,
+                       "arabicName":  "النساء",
+                       "transliteration":  "An-Nisaa",
+                       "verseCount":  176,
+                       "revelationOrder":  92,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  5,
+                       "arabicName":  "المائدة",
+                       "transliteration":  "Al-Maaida",
+                       "verseCount":  120,
+                       "revelationOrder":  112,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  6,
+                       "arabicName":  "الأنعام",
+                       "transliteration":  "Al-An\u0027aam",
+                       "verseCount":  165,
+                       "revelationOrder":  55,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  7,
+                       "arabicName":  "الأعراف",
+                       "transliteration":  "Al-A\u0027raaf",
+                       "verseCount":  206,
+                       "revelationOrder":  39,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  8,
+                       "arabicName":  "الأنفال",
+                       "transliteration":  "Al-Anfaal",
+                       "verseCount":  75,
+                       "revelationOrder":  88,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  9,
+                       "arabicName":  "التوبة",
+                       "transliteration":  "At-Tawba",
+                       "verseCount":  129,
+                       "revelationOrder":  113,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  10,
+                       "arabicName":  "يونس",
+                       "transliteration":  "Yunus",
+                       "verseCount":  109,
+                       "revelationOrder":  51,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  11,
+                       "arabicName":  "هود",
+                       "transliteration":  "Hud",
+                       "verseCount":  123,
+                       "revelationOrder":  52,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  12,
+                       "arabicName":  "يوسف",
+                       "transliteration":  "Yusuf",
+                       "verseCount":  111,
+                       "revelationOrder":  53,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  13,
+                       "arabicName":  "الرعد",
+                       "transliteration":  "Ar-Ra\u0027d",
+                       "verseCount":  43,
+                       "revelationOrder":  96,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  14,
+                       "arabicName":  "ابراهيم",
+                       "transliteration":  "Ibrahim",
+                       "verseCount":  52,
+                       "revelationOrder":  72,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  15,
+                       "arabicName":  "الحجر",
+                       "transliteration":  "Al-Hijr",
+                       "verseCount":  99,
+                       "revelationOrder":  54,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  16,
+                       "arabicName":  "النحل",
+                       "transliteration":  "An-Nahl",
+                       "verseCount":  128,
+                       "revelationOrder":  70,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  17,
+                       "arabicName":  "الإسراء",
+                       "transliteration":  "Al-Israa",
+                       "verseCount":  111,
+                       "revelationOrder":  50,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  18,
+                       "arabicName":  "الكهف",
+                       "transliteration":  "Al-Kahf",
+                       "verseCount":  110,
+                       "revelationOrder":  69,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  19,
+                       "arabicName":  "مريم",
+                       "transliteration":  "Maryam",
+                       "verseCount":  98,
+                       "revelationOrder":  44,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  20,
+                       "arabicName":  "طه",
+                       "transliteration":  "Taa-Haa",
+                       "verseCount":  135,
+                       "revelationOrder":  45,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  21,
+                       "arabicName":  "الأنبياء",
+                       "transliteration":  "Al-Anbiyaa",
+                       "verseCount":  112,
+                       "revelationOrder":  73,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  22,
+                       "arabicName":  "الحج",
+                       "transliteration":  "Al-Hajj",
+                       "verseCount":  78,
+                       "revelationOrder":  103,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  23,
+                       "arabicName":  "المؤمنون",
+                       "transliteration":  "Al-Muminoon",
+                       "verseCount":  118,
+                       "revelationOrder":  74,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  24,
+                       "arabicName":  "النور",
+                       "transliteration":  "An-Noor",
+                       "verseCount":  64,
+                       "revelationOrder":  102,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  25,
+                       "arabicName":  "الفرقان",
+                       "transliteration":  "Al-Furqaan",
+                       "verseCount":  77,
+                       "revelationOrder":  42,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  26,
+                       "arabicName":  "الشعراء",
+                       "transliteration":  "Ash-Shu\u0027araa",
+                       "verseCount":  227,
+                       "revelationOrder":  47,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  27,
+                       "arabicName":  "النمل",
+                       "transliteration":  "An-Naml",
+                       "verseCount":  93,
+                       "revelationOrder":  48,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  28,
+                       "arabicName":  "القصص",
+                       "transliteration":  "Al-Qasas",
+                       "verseCount":  88,
+                       "revelationOrder":  49,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  29,
+                       "arabicName":  "العنكبوت",
+                       "transliteration":  "Al-Ankaboot",
+                       "verseCount":  69,
+                       "revelationOrder":  85,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  30,
+                       "arabicName":  "الروم",
+                       "transliteration":  "Ar-Room",
+                       "verseCount":  60,
+                       "revelationOrder":  84,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  31,
+                       "arabicName":  "لقمان",
+                       "transliteration":  "Luqman",
+                       "verseCount":  34,
+                       "revelationOrder":  57,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  32,
+                       "arabicName":  "السجدة",
+                       "transliteration":  "As-Sajda",
+                       "verseCount":  30,
+                       "revelationOrder":  75,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  33,
+                       "arabicName":  "الأحزاب",
+                       "transliteration":  "Al-Ahzaab",
+                       "verseCount":  73,
+                       "revelationOrder":  90,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  34,
+                       "arabicName":  "سبإ",
+                       "transliteration":  "Saba",
+                       "verseCount":  54,
+                       "revelationOrder":  58,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  35,
+                       "arabicName":  "فاطر",
+                       "transliteration":  "Faatir",
+                       "verseCount":  45,
+                       "revelationOrder":  43,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  36,
+                       "arabicName":  "يس",
+                       "transliteration":  "Yaseen",
+                       "verseCount":  83,
+                       "revelationOrder":  41,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  37,
+                       "arabicName":  "الصافات",
+                       "transliteration":  "As-Saaffaat",
+                       "verseCount":  182,
+                       "revelationOrder":  56,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  38,
+                       "arabicName":  "ص",
+                       "transliteration":  "Saad",
+                       "verseCount":  88,
+                       "revelationOrder":  38,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  39,
+                       "arabicName":  "الزمر",
+                       "transliteration":  "Az-Zumar",
+                       "verseCount":  75,
+                       "revelationOrder":  59,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  40,
+                       "arabicName":  "غافر",
+                       "transliteration":  "Al-Ghaafir",
+                       "verseCount":  85,
+                       "revelationOrder":  60,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  41,
+                       "arabicName":  "فصلت",
+                       "transliteration":  "Fussilat",
+                       "verseCount":  54,
+                       "revelationOrder":  61,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  42,
+                       "arabicName":  "الشورى",
+                       "transliteration":  "Ash-Shura",
+                       "verseCount":  53,
+                       "revelationOrder":  62,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  43,
+                       "arabicName":  "الزخرف",
+                       "transliteration":  "Az-Zukhruf",
+                       "verseCount":  89,
+                       "revelationOrder":  63,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  44,
+                       "arabicName":  "الدخان",
+                       "transliteration":  "Ad-Dukhaan",
+                       "verseCount":  59,
+                       "revelationOrder":  64,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  45,
+                       "arabicName":  "الجاثية",
+                       "transliteration":  "Al-Jaathiya",
+                       "verseCount":  37,
+                       "revelationOrder":  65,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  46,
+                       "arabicName":  "الأحقاف",
+                       "transliteration":  "Al-Ahqaf",
+                       "verseCount":  35,
+                       "revelationOrder":  66,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  47,
+                       "arabicName":  "محمد",
+                       "transliteration":  "Muhammad",
+                       "verseCount":  38,
+                       "revelationOrder":  95,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  48,
+                       "arabicName":  "الفتح",
+                       "transliteration":  "Al-Fath",
+                       "verseCount":  29,
+                       "revelationOrder":  111,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  49,
+                       "arabicName":  "الحجرات",
+                       "transliteration":  "Al-Hujuraat",
+                       "verseCount":  18,
+                       "revelationOrder":  106,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  50,
+                       "arabicName":  "ق",
+                       "transliteration":  "Qaaf",
+                       "verseCount":  45,
+                       "revelationOrder":  34,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  51,
+                       "arabicName":  "الذاريات",
+                       "transliteration":  "Adh-Dhaariyat",
+                       "verseCount":  60,
+                       "revelationOrder":  67,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  52,
+                       "arabicName":  "الطور",
+                       "transliteration":  "At-Tur",
+                       "verseCount":  49,
+                       "revelationOrder":  76,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  53,
+                       "arabicName":  "النجم",
+                       "transliteration":  "An-Najm",
+                       "verseCount":  62,
+                       "revelationOrder":  23,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  54,
+                       "arabicName":  "القمر",
+                       "transliteration":  "Al-Qamar",
+                       "verseCount":  55,
+                       "revelationOrder":  37,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  55,
+                       "arabicName":  "الرحمن",
+                       "transliteration":  "Ar-Rahmaan",
+                       "verseCount":  78,
+                       "revelationOrder":  97,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  56,
+                       "arabicName":  "الواقعة",
+                       "transliteration":  "Al-Waaqia",
+                       "verseCount":  96,
+                       "revelationOrder":  46,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  57,
+                       "arabicName":  "الحديد",
+                       "transliteration":  "Al-Hadid",
+                       "verseCount":  29,
+                       "revelationOrder":  94,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  58,
+                       "arabicName":  "المجادلة",
+                       "transliteration":  "Al-Mujaadila",
+                       "verseCount":  22,
+                       "revelationOrder":  105,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  59,
+                       "arabicName":  "الحشر",
+                       "transliteration":  "Al-Hashr",
+                       "verseCount":  24,
+                       "revelationOrder":  101,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  60,
+                       "arabicName":  "الممتحنة",
+                       "transliteration":  "Al-Mumtahana",
+                       "verseCount":  13,
+                       "revelationOrder":  91,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  61,
+                       "arabicName":  "الصف",
+                       "transliteration":  "As-Saff",
+                       "verseCount":  14,
+                       "revelationOrder":  109,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  62,
+                       "arabicName":  "الجمعة",
+                       "transliteration":  "Al-Jumu\u0027a",
+                       "verseCount":  11,
+                       "revelationOrder":  110,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  63,
+                       "arabicName":  "المنافقون",
+                       "transliteration":  "Al-Munaafiqoon",
+                       "verseCount":  11,
+                       "revelationOrder":  104,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  64,
+                       "arabicName":  "التغابن",
+                       "transliteration":  "At-Taghaabun",
+                       "verseCount":  18,
+                       "revelationOrder":  108,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  65,
+                       "arabicName":  "الطلاق",
+                       "transliteration":  "At-Talaaq",
+                       "verseCount":  12,
+                       "revelationOrder":  99,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  66,
+                       "arabicName":  "التحريم",
+                       "transliteration":  "At-Tahrim",
+                       "verseCount":  12,
+                       "revelationOrder":  107,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  67,
+                       "arabicName":  "الملك",
+                       "transliteration":  "Al-Mulk",
+                       "verseCount":  30,
+                       "revelationOrder":  77,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  68,
+                       "arabicName":  "القلم",
+                       "transliteration":  "Al-Qalam",
+                       "verseCount":  52,
+                       "revelationOrder":  2,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  69,
+                       "arabicName":  "الحاقة",
+                       "transliteration":  "Al-Haaqqa",
+                       "verseCount":  52,
+                       "revelationOrder":  78,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  70,
+                       "arabicName":  "المعارج",
+                       "transliteration":  "Al-Ma\u0027aarij",
+                       "verseCount":  44,
+                       "revelationOrder":  79,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  71,
+                       "arabicName":  "نوح",
+                       "transliteration":  "Nooh",
+                       "verseCount":  28,
+                       "revelationOrder":  71,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  72,
+                       "arabicName":  "الجن",
+                       "transliteration":  "Al-Jinn",
+                       "verseCount":  28,
+                       "revelationOrder":  40,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  73,
+                       "arabicName":  "المزمل",
+                       "transliteration":  "Al-Muzzammil",
+                       "verseCount":  20,
+                       "revelationOrder":  3,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  74,
+                       "arabicName":  "المدثر",
+                       "transliteration":  "Al-Muddaththir",
+                       "verseCount":  56,
+                       "revelationOrder":  4,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  75,
+                       "arabicName":  "القيامة",
+                       "transliteration":  "Al-Qiyaama",
+                       "verseCount":  40,
+                       "revelationOrder":  31,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  76,
+                       "arabicName":  "الانسان",
+                       "transliteration":  "Al-Insaan",
+                       "verseCount":  31,
+                       "revelationOrder":  98,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  77,
+                       "arabicName":  "المرسلات",
+                       "transliteration":  "Al-Mursalaat",
+                       "verseCount":  50,
+                       "revelationOrder":  33,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  78,
+                       "arabicName":  "النبإ",
+                       "transliteration":  "An-Naba",
+                       "verseCount":  40,
+                       "revelationOrder":  80,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  79,
+                       "arabicName":  "النازعات",
+                       "transliteration":  "An-Naazi\u0027aat",
+                       "verseCount":  46,
+                       "revelationOrder":  81,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  80,
+                       "arabicName":  "عبس",
+                       "transliteration":  "Abasa",
+                       "verseCount":  42,
+                       "revelationOrder":  24,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  81,
+                       "arabicName":  "التكوير",
+                       "transliteration":  "At-Takwir",
+                       "verseCount":  29,
+                       "revelationOrder":  7,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  82,
+                       "arabicName":  "الإنفطار",
+                       "transliteration":  "Al-Infitaar",
+                       "verseCount":  19,
+                       "revelationOrder":  82,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  83,
+                       "arabicName":  "المطففين",
+                       "transliteration":  "Al-Mutaffifin",
+                       "verseCount":  36,
+                       "revelationOrder":  86,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  84,
+                       "arabicName":  "الإنشقاق",
+                       "transliteration":  "Al-Inshiqaaq",
+                       "verseCount":  25,
+                       "revelationOrder":  83,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  85,
+                       "arabicName":  "البروج",
+                       "transliteration":  "Al-Burooj",
+                       "verseCount":  22,
+                       "revelationOrder":  27,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  86,
+                       "arabicName":  "الطارق",
+                       "transliteration":  "At-Taariq",
+                       "verseCount":  17,
+                       "revelationOrder":  36,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  87,
+                       "arabicName":  "الأعلى",
+                       "transliteration":  "Al-A\u0027laa",
+                       "verseCount":  19,
+                       "revelationOrder":  8,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  88,
+                       "arabicName":  "الغاشية",
+                       "transliteration":  "Al-Ghaashiya",
+                       "verseCount":  26,
+                       "revelationOrder":  68,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  89,
+                       "arabicName":  "الفجر",
+                       "transliteration":  "Al-Fajr",
+                       "verseCount":  30,
+                       "revelationOrder":  10,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  90,
+                       "arabicName":  "البلد",
+                       "transliteration":  "Al-Balad",
+                       "verseCount":  20,
+                       "revelationOrder":  35,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  91,
+                       "arabicName":  "الشمس",
+                       "transliteration":  "Ash-Shams",
+                       "verseCount":  15,
+                       "revelationOrder":  26,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  92,
+                       "arabicName":  "الليل",
+                       "transliteration":  "Al-Lail",
+                       "verseCount":  21,
+                       "revelationOrder":  9,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  93,
+                       "arabicName":  "الضحى",
+                       "transliteration":  "Ad-Dhuhaa",
+                       "verseCount":  11,
+                       "revelationOrder":  11,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  94,
+                       "arabicName":  "الشرح",
+                       "transliteration":  "Ash-Sharh",
+                       "verseCount":  8,
+                       "revelationOrder":  12,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  95,
+                       "arabicName":  "التين",
+                       "transliteration":  "At-Tin",
+                       "verseCount":  8,
+                       "revelationOrder":  28,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  96,
+                       "arabicName":  "العلق",
+                       "transliteration":  "Al-Alaq",
+                       "verseCount":  19,
+                       "revelationOrder":  1,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  97,
+                       "arabicName":  "القدر",
+                       "transliteration":  "Al-Qadr",
+                       "verseCount":  5,
+                       "revelationOrder":  25,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  98,
+                       "arabicName":  "البينة",
+                       "transliteration":  "Al-Bayyina",
+                       "verseCount":  8,
+                       "revelationOrder":  100,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  99,
+                       "arabicName":  "الزلزلة",
+                       "transliteration":  "Az-Zalzala",
+                       "verseCount":  8,
+                       "revelationOrder":  93,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  100,
+                       "arabicName":  "العاديات",
+                       "transliteration":  "Al-Aadiyaat",
+                       "verseCount":  11,
+                       "revelationOrder":  14,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  101,
+                       "arabicName":  "القارعة",
+                       "transliteration":  "Al-Qaari\u0027a",
+                       "verseCount":  11,
+                       "revelationOrder":  30,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  102,
+                       "arabicName":  "التكاثر",
+                       "transliteration":  "At-Takaathur",
+                       "verseCount":  8,
+                       "revelationOrder":  16,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  103,
+                       "arabicName":  "العصر",
+                       "transliteration":  "Al-Asr",
+                       "verseCount":  3,
+                       "revelationOrder":  13,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  104,
+                       "arabicName":  "الهمزة",
+                       "transliteration":  "Al-Humaza",
+                       "verseCount":  9,
+                       "revelationOrder":  32,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  105,
+                       "arabicName":  "الفيل",
+                       "transliteration":  "Al-Fil",
+                       "verseCount":  5,
+                       "revelationOrder":  19,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  106,
+                       "arabicName":  "قريش",
+                       "transliteration":  "Quraish",
+                       "verseCount":  4,
+                       "revelationOrder":  29,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  107,
+                       "arabicName":  "الماعون",
+                       "transliteration":  "Al-Maa\u0027un",
+                       "verseCount":  7,
+                       "revelationOrder":  17,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  108,
+                       "arabicName":  "الكوثر",
+                       "transliteration":  "Al-Kawthar",
+                       "verseCount":  3,
+                       "revelationOrder":  15,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  109,
+                       "arabicName":  "الكافرون",
+                       "transliteration":  "Al-Kaafiroon",
+                       "verseCount":  6,
+                       "revelationOrder":  18,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  110,
+                       "arabicName":  "النصر",
+                       "transliteration":  "An-Nasr",
+                       "verseCount":  3,
+                       "revelationOrder":  114,
+                       "revelationType":  "madani"
+                   },
+                   {
+                       "number":  111,
+                       "arabicName":  "المسد",
+                       "transliteration":  "Al-Masad",
+                       "verseCount":  5,
+                       "revelationOrder":  6,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  112,
+                       "arabicName":  "الإخلاص",
+                       "transliteration":  "Al-Ikhlaas",
+                       "verseCount":  4,
+                       "revelationOrder":  22,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  113,
+                       "arabicName":  "الفلق",
+                       "transliteration":  "Al-Falaq",
+                       "verseCount":  5,
+                       "revelationOrder":  20,
+                       "revelationType":  "makki"
+                   },
+                   {
+                       "number":  114,
+                       "arabicName":  "الناس",
+                       "transliteration":  "An-Naas",
+                       "verseCount":  6,
+                       "revelationOrder":  21,
+                       "revelationType":  "makki"
+                   }
+               ]
+}

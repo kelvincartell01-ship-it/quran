@@ -1,0 +1,222 @@
+{
+  "@@locale": "en",
+  "applicationTitle": "Quran",
+  "applicationSubtitle": "A calm space for the Quran",
+  "navQuran": "Quran",
+  "navChannels": "Channels",
+  "navSettings": "Settings",
+  "quranWelcome": "Your Quran journey",
+  "quranWelcomeBody": "A quiet place to read, listen, and reflect.",
+  "quranContentUnavailable": "Quran reading will be available here in a future update.",
+  "channelsTitle": "Channels",
+  "channelsDescription": "Choose an official broadcast page for one of the two holy-city channels.",
+  "makkahLiveName": "Makkah Live",
+  "makkahLiveDescription": "Live broadcast from Masjid al-Haram.",
+  "madinahLiveName": "Madinah Live",
+  "madinahLiveDescription": "Live broadcast from Al-Masjid an-Nabawi.",
+  "officialBroadcasterLabel": "Official broadcaster",
+  "openOfficialLivePage": "Open official live page",
+  "openingOfficialLivePage": "Opening official page…",
+  "officialLivePageLabel": "Saudi Broadcasting Authority (SBA) · Aloula live page",
+  "channelInAppPlaybackUnverified": "A current official in-app stream could not be verified. No unverified feed or LIVE status is shown; use the broadcaster’s official page.",
+  "officialLivePageOpenError": "The official live page could not be opened. Check your connection and try again.",
+  "channelAudioPauseError": "Quran recitation could not be paused, so the channel page was not opened.",
+  "settingsTitle": "Settings",
+  "languageSection": "Language",
+  "languageLabel": "App language",
+  "languageSorani": "Sorani Kurdish",
+  "languageArabic": "Arabic",
+  "languageEnglish": "English",
+  "appearanceSection": "Appearance",
+  "themeLabel": "Theme",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "readingSection": "Reading",
+  "quranFontSize": "Quran text size",
+  "fontSizeValue": "{size}",
+  "@fontSizeValue": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "preferenceSaveError": "Your preference could not be saved. Please try again.",
+  "fontPreparationNote": "Amiri Quran is bundled under SIL OFL 1.1; its name does not assert an official Hafs edition.",
+  "soraniFrameworkLocalizationNote": "Flutter-owned control labels use Arabic in Sorani mode because the SDK does not provide Sorani framework translations.",
+  "surahsHeading": "Surahs",
+  "surahCount": "{count, plural, one{# Surah} other{# Surahs}}",
+  "@surahCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchSurahs": "Search by name or number",
+  "clearSearch": "Clear search",
+  "noSurahsFound": "No Surahs match your search.",
+  "surahLoadError": "Surah information could not be loaded.",
+  "retry": "Try again",
+  "surahDetailTitle": "Surah details",
+  "surahNotFound": "This Surah could not be found.",
+  "surahNumber": "Surah {number}",
+  "@surahNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "surahNumberLabel": "Number",
+  "verseCountLabel": "Verses",
+  "verseCount": "{count, plural, one{# verse} other{# verses}}",
+  "@verseCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "revelationOrderLabel": "Revelation order",
+  "makki": "Makki",
+  "madani": "Madani",
+  "surahDetailComingSoon": "Quran verses and reading features will be added in a later phase.",
+  "quranReaderTitle": "Quran reading",
+  "quranReaderLoadError": "Quran text or Sorani meanings could not be loaded.",
+  "verseMeaningLabel": "Verse meaning",
+  "verseNumber": "Verse {number}",
+  "@verseNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "increaseQuranFontSize": "Increase Quran font size",
+  "decreaseQuranFontSize": "Decrease Quran font size",
+  "audioPlayerTitle": "Quran recitation",
+  "audioPlaybackUnavailable": "Audio playback is available on Android and iOS.",
+  "selectReciter": "Reciter",
+  "playSurah": "Play this Surah",
+  "resumeAudio": "Resume recitation",
+  "pauseAudio": "Pause recitation",
+  "playFromVerse": "Play from verse {verse}",
+  "@playFromVerse": {
+    "placeholders": {
+      "verse": {
+        "type": "int"
+      }
+    }
+  },
+  "previousVerse": "Previous verse",
+  "nextVerse": "Next verse",
+  "repeatModeLabel": "Repeat mode",
+  "repeatOff": "Repeat off",
+  "repeatSurah": "Repeat Surah",
+  "repeatVerse": "Repeat verse",
+  "audioLoading": "Loading recitation…",
+  "audioPlaybackError": "Audio could not be played. Check your connection and try again.",
+  "audioPermissionDenied": "Allow notifications to show playback controls.",
+  "audioProgressLabel": "Recitation progress",
+  "showAudioControls": "Show audio controls",
+  "hideAudioControls": "Hide audio controls",
+  "audioStreamingAttribution": "Audio by Al Quran Cloud. Stream with internet or download Surahs for offline listening.",
+  "downloadSection": "Audio downloads",
+  "downloadReciter": "Download reciter",
+  "downloadSurahAction": "Download this Surah",
+  "downloadQuranAction": "Download all 114 Surahs",
+  "downloadAllConfirmationTitle": "Download the complete Quran?",
+  "downloadAllConfirmationBody": "This will queue all 114 Surahs for {reciter}. Downloads use mobile data and storage; Wi-Fi is recommended. Nothing starts until you confirm.",
+  "@downloadAllConfirmationBody": {
+    "placeholders": {
+      "reciter": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadSizeUnavailable": "A reliable total size estimate is not available before the audio files are requested.",
+  "downloadQueued": "Download queued.",
+  "downloadProgress": "{completed} of {total} verses verified",
+  "@downloadProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadBatchProgress": "{completed} of {total} Surahs complete",
+  "@downloadBatchProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadCurrentSurah": "Current: Surah {surah}, verse {verse}",
+  "@downloadCurrentSurah": {
+    "placeholders": {
+      "surah": {
+        "type": "int"
+      },
+      "verse": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadCurrentFileProgress": "Current verse bytes: {received} / {total}",
+  "@downloadCurrentFileProgress": {
+    "placeholders": {
+      "received": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadWaiting": "Waiting",
+  "downloadDownloading": "Downloading",
+  "downloadPaused": "Paused",
+  "downloadCompleted": "Downloaded",
+  "downloadFailed": "Incomplete — retry failed verses",
+  "downloadCancelled": "Cancelled",
+  "downloadNotDownloaded": "Not downloaded",
+  "downloadPauseAll": "Pause all",
+  "downloadResumeAll": "Resume all",
+  "downloadCancelAll": "Cancel all",
+  "downloadPause": "Pause download",
+  "downloadResume": "Resume download",
+  "downloadCancel": "Cancel download",
+  "downloadRetry": "Retry failed verses",
+  "downloadDelete": "Delete",
+  "downloadDeleteAll": "Clear all downloaded audio",
+  "downloadDeleteAllConfirmation": "Delete all downloaded Quran audio from this device? This cannot be undone.",
+  "downloadDeleteReciter": "Delete this reciter's downloads",
+  "downloadStorageUsed": "Storage used: {size}",
+  "@downloadStorageUsed": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadedSurahs": "Downloaded Surahs",
+  "downloadNoItems": "No downloaded audio yet.",
+  "downloadSourceAttribution": "Audio files are from Al Quran Cloud (edition IDs retained) for personal and educational listening. Recitation rights remain with their respective reciters or estates. https://alquran.cloud/cdn · https://alquran.cloud/terms-and-conditions",
+  "offlineAudioNotDownloaded": "This verse is not downloaded for the selected reciter. Connect to the internet or download this Surah for offline playback.",
+  "downloadOperationError": "The download could not be completed. Check your connection and available storage, then try again.",
+  "aboutSection": "About",
+  "dataAttributionTitle": "Sources and licenses",
+  "surahMetadataAttribution": "Surah metadata from Tanzil Quran Metadata, Version 1.0, CC BY. Verse counts and revelation places were cross-checked with Quran.com API v4. https://tanzil.net/docs/Quran_Metadata",
+  "quranTextAttribution": "Tanzil Quran Text, Version 1.1. Copyright © 2007–2026 Tanzil Project. CC BY 3.0; text used verbatim without changes. https://tanzil.net/docs/Text_License",
+  "soraniDataAttribution": "Holy Quran Kurdish Sorani Translation Dataset (HQKSTD). Contributors: Shakhawan Hares Wady, Mhamad Bamoki, and Soran Badawi. DOI: 10.17632/byyjd7kmvd.1. CC BY 4.0: https://creativecommons.org/licenses/by/4.0/. Source: https://data.mendeley.com/datasets/byyjd7kmvd/1. Converted to the app's local JSON format.",
+  "quranFontAttribution": "Amiri Quran font, Amiri Project, version 1.003. SIL Open Font License 1.1. https://github.com/aliftype/amiri"
+}

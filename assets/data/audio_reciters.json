@@ -1,0 +1,84 @@
+{
+  "source": "Al Quran Cloud Audio API and CDN",
+  "sourceUrl": "https://alquran.cloud/api",
+  "streamingUrl": "https://cdn.islamic.network/quran/audio",
+  "reciters": [
+    {
+      "identifier": "ar.alafasy",
+      "arabicName": "مشاري العفاسي",
+      "englishName": "Alafasy",
+      "bitrateKbps": 128,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.husary",
+      "arabicName": "محمود خليل الحصري",
+      "englishName": "Husary",
+      "bitrateKbps": 64,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.abdurrahmaansudais",
+      "arabicName": "عبدالرحمن السديس",
+      "englishName": "Abdurrahmaan As-Sudais",
+      "bitrateKbps": 192,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.saoodshuraym",
+      "arabicName": "سعود الشريم",
+      "englishName": "Saood bin Ibraaheem Ash-Shuraym",
+      "bitrateKbps": 64,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.abdulbasitmurattal",
+      "arabicName": "عبد الباسط عبد الصمد المرتل",
+      "englishName": "Abdul Basit",
+      "bitrateKbps": 192,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.ahmedajamy",
+      "arabicName": "أحمد بن علي العجمي",
+      "englishName": "Ahmed ibn Ali al-Ajamy",
+      "bitrateKbps": 128,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.muhammadayyoub",
+      "arabicName": "محمد أيوب",
+      "englishName": "Muhammad Ayyoub",
+      "bitrateKbps": 128,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.hudhaify",
+      "arabicName": "علي بن عبدالرحمن الحذيفي",
+      "englishName": "Hudhaify",
+      "bitrateKbps": 128,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.muhammadjibreel",
+      "arabicName": "محمد جبريل",
+      "englishName": "Muhammad Jibreel",
+      "bitrateKbps": 128,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.abdullahbasfar",
+      "arabicName": "عبد الله بصفر",
+      "englishName": "Abdullah Basfar",
+      "bitrateKbps": 64,
+      "verifiedAyahCount": 6236
+    },
+    {
+      "identifier": "ar.hanirifai",
+      "arabicName": "هاني الرفاعي",
+      "englishName": "Hani Rifai",
+      "bitrateKbps": 192,
+      "verifiedAyahCount": 6236
+    }
+  ]
+}

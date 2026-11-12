@@ -1,0 +1,222 @@
+{
+  "@@locale": "ckb",
+  "applicationTitle": "قورئان",
+  "applicationSubtitle": "شوێنێکی ئارام بۆ قورئان",
+  "navQuran": "قورئان",
+  "navChannels": "کەناڵەکان",
+  "navSettings": "ڕێکخستن",
+  "quranWelcome": "گەشتەکەت لەگەڵ قورئان",
+  "quranWelcomeBody": "شوێنێکی ئارام بۆ خوێندنەوە و بیرکردنەوە.",
+  "quranContentUnavailable": "خوێندنەوەی قورئان لە نوێکارییەکی داهاتوودا لێرە بەردەست دەبێت.",
+  "channelsTitle": "کەناڵەکان",
+  "channelsDescription": "پەڕەی پەخشی فەرمیی یەکێک لە دوو کەناڵی شارە پیرۆزەکان هەڵبژێرە.",
+  "makkahLiveName": "پەخشی ڕاستەوخۆی مەککە",
+  "makkahLiveDescription": "پەخشی ڕاستەوخۆ لە مەسجیدی حەرامەوە.",
+  "madinahLiveName": "پەخشی ڕاستەوخۆی مەدینە",
+  "madinahLiveDescription": "پەخشی ڕاستەوخۆ لە مەسجیدی نەبەوییەوە.",
+  "officialBroadcasterLabel": "پەخشی فەرمی",
+  "openOfficialLivePage": "کردنەوەی پەڕەی فەرمیی پەخش",
+  "openingOfficialLivePage": "پەڕەی فەرمی دەکرێتەوە…",
+  "officialLivePageLabel": "دەزگای تەلەفزیۆن و ڕادیۆی عەرەبستانی سعودی (SBA) · پەڕەی Aloula",
+  "channelInAppPlaybackUnverified": "پەخشی فەرمیی ئێستای ناو ئەپ پشتڕاست نەکراوەتەوە. پەخشی پشتڕاستنەکراو یان نیشانی LIVE پیشان نادرێت؛ پەڕەی فەرمیی پەخش بکەر بکەرەوە.",
+  "officialLivePageOpenError": "پەڕەی فەرمیی پەخش نەکرایەوە. پەیوەندیی ئینتەرنێتەکەت بپشکنە و دووبارە هەوڵبدەوە.",
+  "channelAudioPauseError": "خوێندنەوەی قورئان نەوەستێنرا؛ بۆیە پەڕەی کەناڵ نەکرایەوە.",
+  "settingsTitle": "ڕێکخستن",
+  "languageSection": "زمان",
+  "languageLabel": "زمانی ئەپ",
+  "languageSorani": "کوردیی سۆرانی",
+  "languageArabic": "عەرەبی",
+  "languageEnglish": "ئینگلیزی",
+  "appearanceSection": "ڕووکار",
+  "themeLabel": "شێوازی ڕووکار",
+  "themeSystem": "سیستەم",
+  "themeLight": "ڕووناک",
+  "themeDark": "تاریک",
+  "readingSection": "خوێندنەوە",
+  "quranFontSize": "قەبارەی نووسینی قورئان",
+  "fontSizeValue": "{size}",
+  "@fontSizeValue": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "preferenceSaveError": "پاشەکەوتکردنی هەڵبژاردەکەت سەرکەوتوو نەبوو. تکایە دووبارە هەوڵ بدەرەوە.",
+  "fontPreparationNote": "فۆنتی Amiri Quran بە مۆڵەتی SIL OFL 1.1 بەکاردێت؛ ناوی فۆنتەکە واتای فۆنتی فەرمیی حەفسی نییە.",
+  "soraniFrameworkLocalizationNote": "بەشێک لە پەیامەکانی ناوەوەی کۆنتڕۆڵەکانی Flutter بە عەرەبی پیشان دەدرێن، چونکە وەرگێڕانی سۆرانی بۆ کۆنتڕۆڵەکانی SDK بەردەست نییە.",
+  "surahsHeading": "سوورەتەکان",
+  "surahCount": "{count, plural, one{# سوورەت} other{# سوورەت}}",
+  "@surahCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "searchSurahs": "بگەڕێ بە ناو یان ژمارە",
+  "clearSearch": "پاککردنەوەی گەڕان",
+  "noSurahsFound": "هیچ سوورەتێک لەگەڵ گەڕانەکەت ناگونجێت.",
+  "surahLoadError": "زانیاریی سوورەتەکان بارنەکرا.",
+  "retry": "دووبارە هەوڵبدەوە",
+  "surahDetailTitle": "وردەکاریی سوورەت",
+  "surahNotFound": "ئەم سوورەتە نەدۆزرایەوە.",
+  "surahNumber": "سوورەتی {number}",
+  "@surahNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "surahNumberLabel": "ژمارە",
+  "verseCountLabel": "ژمارەی ئایەتەکان",
+  "verseCount": "{count, plural, one{# ئایەت} other{# ئایەت}}",
+  "@verseCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "revelationOrderLabel": "ڕیزی دابەزین",
+  "makki": "مەککی",
+  "madani": "مەدەنی",
+  "surahDetailComingSoon": "ئایەتەکانی قورئان و تایبەتمەندییەکانی خوێندنەوە لە قۆناغێکی داهاتوودا زیاد دەکرێن.",
+  "quranReaderTitle": "خوێندنەوەی قورئان",
+  "quranReaderLoadError": "دەقی قورئان یان واتای سۆرانی بارنەکرا.",
+  "verseMeaningLabel": "واتای ئایەت",
+  "verseNumber": "ئایەتی {number}",
+  "@verseNumber": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "increaseQuranFontSize": "گەورەکردنی نووسینی قورئان",
+  "decreaseQuranFontSize": "بچووککردنی نووسینی قورئان",
+  "audioPlayerTitle": "خوێندنەوەی قورئان",
+  "audioPlaybackUnavailable": "پەخشی دەنگ لە ئەندرۆید و ئای ئۆ ئێس بەردەستە.",
+  "selectReciter": "قاری",
+  "playSurah": "پەخشکردنی سوورەت",
+  "resumeAudio": "بەردەوامبوون لە خوێندنەوە",
+  "pauseAudio": "وەستاندنی کاتیی خوێندنەوە",
+  "playFromVerse": "پەخشکردن لە ئایەتی {verse} ـەوە",
+  "@playFromVerse": {
+    "placeholders": {
+      "verse": {
+        "type": "int"
+      }
+    }
+  },
+  "previousVerse": "ئایەتی پێشوو",
+  "nextVerse": "ئایەتی دواتر",
+  "repeatModeLabel": "شێوازی دووبارەکردنەوە",
+  "repeatOff": "دووبارەکردنەوە ناچالاکە",
+  "repeatSurah": "دووبارەکردنەوەی سوورەت",
+  "repeatVerse": "دووبارەکردنەوەی ئایەت",
+  "audioLoading": "خوێندنەوە بار دەکرێت…",
+  "audioPlaybackError": "پەخشی دەنگ سەرکەوتوو نەبوو. پەیوەندیی ئینتەرنێتەکەت بپشکنە و دووبارە هەوڵبدەوە.",
+  "audioPermissionDenied": "مۆڵەتی ئاگادارکردنەوە بدە بۆ پیشاندانی کۆنتڕۆڵەکانی پەخش.",
+  "audioProgressLabel": "پێشکەوتنی خوێندنەوە",
+  "showAudioControls": "پیشاندانی کۆنتڕۆڵەکانی دەنگ",
+  "hideAudioControls": "شاردنەوەی کۆنتڕۆڵەکانی دەنگ",
+  "audioStreamingAttribution": "دەنگەکان لە Al Quran Cloud ـەن؛ بە ئینتەرنێت گوێ بگرە یان سوورەتەکان بۆ گوێگرتنی بێ‌ئینتەرنێت دابگرە.",
+  "downloadSection": "داگرتنی دەنگ",
+  "downloadReciter": "قاریی داگرتن",
+  "downloadSurahAction": "داگرتنی ئەم سوورەتە",
+  "downloadQuranAction": "داگرتنی هەموو ١١٤ سوورەت",
+  "downloadAllConfirmationTitle": "هەموو قورئان دابگریت؟",
+  "downloadAllConfirmationBody": "هەموو ١١٤ سوورەت بۆ {reciter} دەخرێنە ڕیزەوە. داگرتنەکان داتای مۆبایل و شوێنی پاشەکەوت بەکاردەهێنن؛ وایفای پێشنیار دەکرێت. تا پشتڕاست نەکەیتەوە هیچ داگرتنێک دەست پێ ناکات.",
+  "@downloadAllConfirmationBody": {
+    "placeholders": {
+      "reciter": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadSizeUnavailable": "پێش داواکردنی فایلە دەنگییەکان قەبارەی گشتی بە دڵنیایی نازانرێت.",
+  "downloadQueued": "داگرتن خراوەتە ڕیزەوە.",
+  "downloadProgress": "{completed} لە {total} ئایەت پشتڕاستکراونەتەوە",
+  "@downloadProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadBatchProgress": "{completed} لە {total} سوورەت تەواو بوون",
+  "@downloadBatchProgress": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadCurrentSurah": "ئێستا: سوورەتی {surah}، ئایەتی {verse}",
+  "@downloadCurrentSurah": {
+    "placeholders": {
+      "surah": {
+        "type": "int"
+      },
+      "verse": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadCurrentFileProgress": "بایتی ئایەتی ئێستا: {received} / {total}",
+  "@downloadCurrentFileProgress": {
+    "placeholders": {
+      "received": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadWaiting": "چاوەڕوانە",
+  "downloadDownloading": "دادەگیرێت",
+  "downloadPaused": "وەستێنراوە",
+  "downloadCompleted": "داگیراوە",
+  "downloadFailed": "تەواو نەبوو — ئایەتە سەرنەکەوتووەکان دووبارە دابگرە",
+  "downloadCancelled": "هەڵوەشێنرایەوە",
+  "downloadNotDownloaded": "داونەگیراوە",
+  "downloadPauseAll": "هەمووی بوەستێنە",
+  "downloadResumeAll": "هەمووی بەردەوام بکە",
+  "downloadCancelAll": "هەمووی هەڵبوەشێنەوە",
+  "downloadPause": "وەستاندنی داگرتن",
+  "downloadResume": "بەردەوامبوون لە داگرتن",
+  "downloadCancel": "هەڵوەشاندنەوەی داگرتن",
+  "downloadRetry": "دووبارە داگرتنی ئایەتە سەرنەکەوتووەکان",
+  "downloadDelete": "سڕینەوە",
+  "downloadDeleteAll": "سڕینەوەی هەموو دەنگە داگیراوەکان",
+  "downloadDeleteAllConfirmation": "هەموو دەنگە داگیراوەکانی قورئان لەم ئامێرە بسڕدرێنەوە؟ ئەم کارە ناگەڕێتەوە.",
+  "downloadDeleteReciter": "سڕینەوەی داگرتنەکانی ئەم قارییە",
+  "downloadStorageUsed": "شوێنی بەکارهاتوو: {size}",
+  "@downloadStorageUsed": {
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadedSurahs": "سوورەتە داگیراوەکان",
+  "downloadNoItems": "هێشتا هیچ دەنگێک دانەگیراوە.",
+  "downloadSourceAttribution": "فایلە دەنگییەکان لە Al Quran Cloud ـەن و بۆ گوێگرتنی کەسی و فێرکارییەن؛ مافی تلاوەتەکان بۆ قاری و خاوەن مافەکانیان دەمێنێتەوە. https://alquran.cloud/cdn · https://alquran.cloud/terms-and-conditions",
+  "offlineAudioNotDownloaded": "ئەم ئایەتە بۆ قاریی هەڵبژێردراو دانەگیراوە. بە ئینتەرنێت پەیوەست ببە یان بۆ پەخشی بێ‌ئینتەرنێت ئەم سوورەتە دابگرە.",
+  "downloadOperationError": "داگرتن تەواو نەبوو. پەیوەندی و شوێنی بەردەست بپشکنە و دووبارە هەوڵبدەوە.",
+  "aboutSection": "دەربارە",
+  "dataAttributionTitle": "سەرچاوە و مۆڵەتەکان",
+  "surahMetadataAttribution": "زانیاریی سوورەتەکان لە تانزیل، وەشانی 1.0، مۆڵەتی CC BY. ژمارەی ئایەت و جۆری دابەزین لەگەڵ Quran.com API v4 بەراورد کراوەتەوە. https://tanzil.net/docs/Quran_Metadata",
+  "quranTextAttribution": "دەقی قورئانی تانزیل، وەشانی ١.١. مافی لەبەرگرتنەوە © ٢٠٠٧–٢٠٢٦ تانزیل. مۆڵەتی CC BY 3.0؛ دەقەکە بەبێ گۆڕانکاری بەکارهاتووە. https://tanzil.net/docs/Text_License",
+  "soraniDataAttribution": "Holy Quran Kurdish Sorani Translation Dataset (HQKSTD). نووسەران: Shakhawan Hares Wady، Mhamad Bamoki، Soran Badawi. DOI: 10.17632/byyjd7kmvd.1. مۆڵەتی CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ سەرچاوە: https://data.mendeley.com/datasets/byyjd7kmvd/1. بۆ ناو ئەپەکە گۆڕدراوەتە فۆرماتی JSON.",
+  "quranFontAttribution": "فۆنتی Amiri Quran، پڕۆژەی Amiri، وەشانی 1.003. مۆڵەتی SIL Open Font License 1.1. https://github.com/aliftype/amiri"
+}
