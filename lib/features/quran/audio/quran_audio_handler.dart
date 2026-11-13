@@ -13,6 +13,7 @@ import 'quran_audio_queue.dart';
 import 'quran_audio_session.dart';
 import 'quran_audio_source_resolver.dart';
 import 'quran_reciter.dart';
+import '../widget/quran_home_widget.dart';
 
 class QuranAudioHandler extends BaseAudioHandler
     with QueueHandler, SeekHandler
@@ -89,6 +90,7 @@ class QuranAudioHandler extends BaseAudioHandler
   bool _interruptionWasActive = false;
   bool _resumeAfterInterruption = false;
   int? _lastPersistedGlobalVerse;
+  int? _lastWidgetGlobalVerseNumber;
   int _lastPersistedPositionSeconds = -10;
   int _queueGeneration = 0;
   bool _isAdvancing = false;
@@ -434,6 +436,36 @@ class QuranAudioHandler extends BaseAudioHandler
     );
     _emitStatus();
     _persistIfNeeded(snapshot, track);
+    _updateHomeWidget(track);
+  }
+
+  void _updateHomeWidget(QuranAudioTrack? track) {
+    final surah = _currentSurah;
+    if (track == null || surah == null || _currentVerses.isEmpty) return;
+
+    final extras = track.mediaItem.extras;
+    final globalVerseNumber = extras?['globalVerseNumber'] as int?;
+    if (globalVerseNumber == null ||
+        globalVerseNumber == _lastWidgetGlobalVerseNumber) {
+      return;
+    }
+
+    final verseNumber = extras?['verseNumber'] as int?;
+    if (verseNumber == null ||
+        verseNumber < 1 ||
+        verseNumber > _currentVerses.length) {
+      throw StateError('The current audio track has an invalid Ayah index.');
+    }
+
+    final verse = _currentVerses[verseNumber - 1];
+    if (verse.globalVerseNumber != globalVerseNumber) {
+      throw StateError('The current audio track does not match its Ayah.');
+    }
+
+    _lastWidgetGlobalVerseNumber = globalVerseNumber;
+    const QuranHomeWidgetSync().updateLastRead(
+      QuranHomeWidgetData.fromVerse(surah: surah, verse: verse),
+    );
   }
 
   void _advanceAfterCompletion(QuranAudioEngineSnapshot snapshot) {

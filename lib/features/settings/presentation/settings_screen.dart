@@ -149,32 +149,6 @@ class SettingsScreen extends ConsumerWidget {
           ],
           const SizedBox(height: 26),
           const QuranAudioDownloadSettings(),
-          const SizedBox(height: 26),
-          _SectionHeading(title: l10n.aboutSection),
-          const SizedBox(height: 10),
-          Card(
-            child: ListTile(
-              key: const ValueKey('data-attribution'),
-              leading: const Icon(Icons.info_outline_rounded),
-              title: Text(l10n.dataAttributionTitle),
-              trailing: const Icon(Icons.chevron_right_rounded),
-              onTap: () => showAboutDialog(
-                context: context,
-                applicationName: l10n.applicationTitle,
-                children: [
-                  Text(l10n.surahMetadataAttribution),
-                  const SizedBox(height: 12),
-                  Text(l10n.quranTextAttribution),
-                  const SizedBox(height: 12),
-                  Text(l10n.soraniDataAttribution),
-                  const SizedBox(height: 12),
-                  Text(l10n.quranFontAttribution),
-                  const SizedBox(height: 12),
-                  Text(l10n.downloadSourceAttribution),
-                ],
-              ),
-            ),
-          ),
         ],
       ),
     );

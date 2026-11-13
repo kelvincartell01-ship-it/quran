@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../../../app/theme/app_colors.dart';
 import '../../../l10n/app_localizations.dart';
@@ -15,13 +16,19 @@ import '../audio/quran_audio_player.dart';
 import '../audio/quran_audio_providers.dart';
 import '../domain/quran_verse.dart';
 import '../domain/surah.dart';
+import '../widget/quran_home_widget.dart';
 import 'quran_verse_providers.dart';
 import 'surah_providers.dart';
 
 class SurahReaderScreen extends ConsumerWidget {
-  const SurahReaderScreen({required this.surahNumber, super.key});
+  const SurahReaderScreen({
+    required this.surahNumber,
+    this.initialVerseNumber,
+    super.key,
+  });
 
   final int surahNumber;
+  final int? initialVerseNumber;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -101,6 +108,7 @@ class SurahReaderScreen extends ConsumerWidget {
                 surah: surah,
                 verses: verses,
                 arabicFontSize: fontSize,
+                initialVerseNumber: initialVerseNumber,
               ),
             );
           },
@@ -120,19 +128,55 @@ class SurahReaderScreen extends ConsumerWidget {
   }
 }
 
-class _QuranReadingView extends ConsumerWidget {
+class _QuranReadingView extends ConsumerStatefulWidget {
   const _QuranReadingView({
     required this.surah,
     required this.verses,
     required this.arabicFontSize,
+    required this.initialVerseNumber,
   });
 
   final Surah surah;
   final List<QuranVerse> verses;
   final double arabicFontSize;
+  final int? initialVerseNumber;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<_QuranReadingView> createState() => _QuranReadingViewState();
+}
+
+class _QuranReadingViewState extends ConsumerState<_QuranReadingView> {
+  final ItemScrollController _itemScrollController = ItemScrollController();
+  final ItemPositionsListener _itemPositionsListener =
+      ItemPositionsListener.create();
+  Timer? _widgetUpdateDebounce;
+  int? _lastScrolledGlobalVerse;
+  int? _lastPositionGlobalVerse;
+  int? _lastWidgetGlobalVerse;
+  Duration? _lastPosition;
+  bool _initialVerseScrollPending = false;
+  bool _initialVerseScrollScheduled = false;
+  bool _wasPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _itemPositionsListener.itemPositions.addListener(
+      _scheduleWidgetLastReadUpdate,
+    );
+  }
+
+  @override
+  void dispose() {
+    _widgetUpdateDebounce?.cancel();
+    _itemPositionsListener.itemPositions.removeListener(
+      _scheduleWidgetLastReadUpdate,
+    );
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final controller = ref.watch(quranAudioControllerProvider);
     final reciters = ref.watch(quranRecitersProvider).asData?.value;
     final selectedReciter = reciters == null || reciters.isEmpty
@@ -148,23 +192,38 @@ class _QuranReadingView extends ConsumerWidget {
       initialData: controller.status,
       builder: (context, snapshot) {
         final audioStatus = snapshot.data ?? controller.status;
+        final hasBismillah =
+            widget.verses.isNotEmpty &&
+            widget.verses.first.surahOpeningBismillah != null;
+        final verseStartIndex = 3 + (hasBismillah ? 1 : 0);
+        _scheduleInitialVerseScroll(verseStartIndex);
+        _syncVerseScroll(audioStatus, controller, verseStartIndex);
         return SelectionArea(
-          child: CustomScrollView(
-            key: PageStorageKey<String>('quran-reading-scroll-${surah.number}'),
-            slivers: [
-              SliverToBoxAdapter(child: _ReaderHeader(surah: surah)),
-              SliverToBoxAdapter(
-                child: QuranAudioPlayer(surah: surah, verses: verses),
-              ),
-              if (verses.first.surahOpeningBismillah case final bismillah?)
-                SliverToBoxAdapter(
-                  child: _SurahOpeningBismillah(
-                    text: bismillah,
-                    fontSize: arabicFontSize,
-                  ),
-                ),
-              SliverToBoxAdapter(
-                child: Padding(
+          child: ScrollablePositionedList.builder(
+            key: PageStorageKey<String>(
+              'quran-reading-scroll-${widget.surah.number}',
+            ),
+            itemScrollController: _itemScrollController,
+            itemPositionsListener: _itemPositionsListener,
+            itemCount: verseStartIndex + widget.verses.length,
+            itemBuilder: (context, itemIndex) {
+              if (itemIndex == 0) {
+                return _ReaderHeader(surah: widget.surah);
+              }
+              if (itemIndex == 1) {
+                return QuranAudioPlayer(
+                  surah: widget.surah,
+                  verses: widget.verses,
+                );
+              }
+              if (hasBismillah && itemIndex == 2) {
+                return _SurahOpeningBismillah(
+                  text: widget.verses.first.surahOpeningBismillah!,
+                  fontSize: widget.arabicFontSize,
+                );
+              }
+              if (itemIndex == verseStartIndex - 1) {
+                return Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(24, 10, 24, 0),
                   child: Align(
                     alignment: AlignmentDirectional.centerEnd,
@@ -177,49 +236,165 @@ class _QuranReadingView extends ConsumerWidget {
                       ),
                     ),
                   ),
+                );
+              }
+
+              final verseIndex = itemIndex - verseStartIndex;
+              final verse = widget.verses[verseIndex];
+              return Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(
+                  20,
+                  verseIndex == 0 ? 10 : 0,
+                  20,
+                  verseIndex == widget.verses.length - 1 ? 32 : 0,
                 ),
-              ),
-              SliverPadding(
-                padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 20, 32),
-                sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      final verse = verses[index];
-                      return _VerseParagraph(
-                        verse: verse,
-                        arabicFontSize: arabicFontSize,
-                        isLast: index == verses.length - 1,
-                        isCurrent:
-                            audioStatus.globalVerseNumber ==
-                                verse.globalVerseNumber &&
-                            audioStatus.surahNumber == surah.number,
-                        onPlayVerse: selectedReciter == null
-                            ? null
-                            : () => unawaited(
-                                requestAudioPermissionAndRun(
-                                  context,
-                                  ref,
-                                  () => controller.playVerse(
-                                    surah: surah,
-                                    verses: verses,
-                                    reciter: selectedReciter,
-                                    verseNumber: verse.verseNumber,
-                                  ),
-                                ),
-                              ),
-                      );
-                    },
-                    childCount: verses.length,
-                    addAutomaticKeepAlives: false,
-                    addRepaintBoundaries: true,
-                  ),
+                child: _VerseParagraph(
+                  verse: verse,
+                  arabicFontSize: widget.arabicFontSize,
+                  isLast: verseIndex == widget.verses.length - 1,
+                  isCurrent:
+                      audioStatus.surahNumber == widget.surah.number &&
+                          audioStatus.globalVerseNumber != null
+                      ? audioStatus.globalVerseNumber == verse.globalVerseNumber
+                      : widget.initialVerseNumber == verse.verseNumber,
+                  onPlayVerse: selectedReciter == null
+                      ? null
+                      : () => unawaited(
+                          requestAudioPermissionAndRun(
+                            context,
+                            ref,
+                            () => controller.playVerse(
+                              surah: widget.surah,
+                              verses: widget.verses,
+                              reciter: selectedReciter,
+                              verseNumber: verse.verseNumber,
+                            ),
+                          ),
+                        ),
                 ),
-              ),
-            ],
+              );
+            },
           ),
         );
       },
     );
+  }
+
+  void _scheduleWidgetLastReadUpdate() {
+    final visibleVerses =
+        _itemPositionsListener.itemPositions.value
+            .where(
+              (position) =>
+                  position.index >= _verseStartIndex &&
+                  position.itemLeadingEdge < 1 &&
+                  position.itemTrailingEdge > 0,
+            )
+            .toList()
+          ..sort(
+            (left, right) =>
+                left.itemLeadingEdge.compareTo(right.itemLeadingEdge),
+          );
+    if (visibleVerses.isEmpty) return;
+
+    final verseIndex = visibleVerses.first.index - _verseStartIndex;
+    if (verseIndex < 0 || verseIndex >= widget.verses.length) return;
+    final verse = widget.verses[verseIndex];
+    if (verse.globalVerseNumber == _lastWidgetGlobalVerse) return;
+
+    _widgetUpdateDebounce?.cancel();
+    _widgetUpdateDebounce = Timer(const Duration(milliseconds: 400), () {
+      if (!mounted || verse.globalVerseNumber == _lastWidgetGlobalVerse) return;
+      _lastWidgetGlobalVerse = verse.globalVerseNumber;
+      const QuranHomeWidgetSync().updateLastRead(
+        QuranHomeWidgetData.fromVerse(surah: widget.surah, verse: verse),
+      );
+    });
+  }
+
+  int get _verseStartIndex =>
+      3 +
+      (widget.verses.isNotEmpty &&
+              widget.verses.first.surahOpeningBismillah != null
+          ? 1
+          : 0);
+
+  void _syncVerseScroll(
+    QuranAudioStatus status,
+    QuranAudioController controller,
+    int verseStartIndex,
+  ) {
+    final wasPlaying = _wasPlaying;
+    final previousPosition = _lastPosition;
+    final previousPositionGlobalVerse = _lastPositionGlobalVerse;
+    _wasPlaying = status.playing;
+    _lastPosition = status.position;
+    _lastPositionGlobalVerse = status.globalVerseNumber;
+    if (status.surahNumber != widget.surah.number ||
+        status.globalVerseNumber == null) {
+      return;
+    }
+
+    final verseIndex = widget.verses.indexWhere(
+      (verse) => verse.globalVerseNumber == status.globalVerseNumber,
+    );
+    if (verseIndex < 0) return;
+    if (_initialVerseScrollPending) return;
+
+    final shouldScroll =
+        status.globalVerseNumber != _lastScrolledGlobalVerse ||
+        (status.playing && !wasPlaying) ||
+        (status.playing &&
+            previousPositionGlobalVerse == status.globalVerseNumber &&
+            previousPosition != null &&
+            status.position < previousPosition);
+    if (!shouldScroll) return;
+    _lastScrolledGlobalVerse = status.globalVerseNumber;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted ||
+          !_itemScrollController.isAttached ||
+          controller.status.surahNumber != widget.surah.number ||
+          controller.status.globalVerseNumber != status.globalVerseNumber) {
+        return;
+      }
+      unawaited(
+        _itemScrollController.scrollTo(
+          index: verseStartIndex + verseIndex,
+          alignment: 0.1,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeInOut,
+        ),
+      );
+    });
+  }
+
+  void _scheduleInitialVerseScroll(int verseStartIndex) {
+    final verseNumber = widget.initialVerseNumber;
+    if (_initialVerseScrollScheduled ||
+        verseNumber == null ||
+        verseNumber < 1 ||
+        verseNumber > widget.verses.length) {
+      return;
+    }
+
+    _initialVerseScrollScheduled = true;
+    _initialVerseScrollPending = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || !_itemScrollController.isAttached) {
+        _initialVerseScrollPending = false;
+        return;
+      }
+      unawaited(
+        _itemScrollController
+            .scrollTo(
+              index: verseStartIndex + verseNumber - 1,
+              alignment: 0.1,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeInOut,
+            )
+            .whenComplete(() => _initialVerseScrollPending = false),
+      );
+    });
   }
 }
 

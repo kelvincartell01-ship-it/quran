@@ -13,6 +13,7 @@ import 'quran_audio_handler.dart';
 import 'quran_audio_preferences.dart';
 import 'quran_audio_session.dart';
 import 'quran_audio_source_resolver.dart';
+import '../widget/quran_home_widget.dart';
 
 Future<QuranAudioController> createQuranAudioController(
   SharedPreferences sharedPreferences, {
@@ -28,6 +29,7 @@ Future<QuranAudioController> createQuranAudioController(
 
   final preferences = QuranAudioPreferencesRepository(sharedPreferences);
   final initialPreferences = preferences.load();
+  await QuranHomeWidgetSync.initialize();
   final engine = JustAudioQuranAudioEngine();
   await engine.setRepeatMode(initialPreferences.repeatMode);
   final session = await AudioSessionCoordinator.create();
@@ -60,12 +62,14 @@ Future<QuranAudioController> createQuranAudioController(
 }
 
 Future<Uri> _localAudioArtworkUri() async {
-  final directory = await getTemporaryDirectory();
+  final directory = await getApplicationSupportDirectory();
   final file = File(
-    '${directory.path}${Platform.pathSeparator}quran_audio_art.png',
+    '${directory.path}${Platform.pathSeparator}quran_lock_screen_art.png',
   );
   if (!await file.exists()) {
-    final bytes = await rootBundle.load('assets/images/quran_audio_art.png');
+    final bytes = await rootBundle.load(
+      'assets/branding/quran_icon_prepared.png',
+    );
     await file.writeAsBytes(
       bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes),
       flush: true,

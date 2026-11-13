@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quran/app/app.dart';
 import 'package:quran/app/localization/sorani_localizations.dart';
+import 'package:quran/app/router/app_router.dart';
 import 'package:quran/core/preferences/shared_preferences_repository.dart';
 import 'package:quran/features/quran/data/surah_metadata_data_source.dart';
 import 'package:quran/features/quran/data/quran_text_data_source.dart';
@@ -20,6 +21,7 @@ import 'package:quran/features/quran/domain/quran_verse.dart';
 import 'package:quran/features/quran/domain/surah.dart';
 import 'package:quran/features/quran/presentation/quran_verse_providers.dart';
 import 'package:quran/features/quran/presentation/surah_providers.dart';
+import 'package:quran/features/quran/widget/quran_home_widget.dart';
 import 'package:quran/features/settings/presentation/settings_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -315,6 +317,44 @@ void main() {
     );
   });
 
+  testWidgets('widget deep link opens and scrolls to the saved Ayah', (
+    tester,
+  ) async {
+    await tester.pumpWidget(await createTestApp());
+    await pumpUi(tester);
+
+    final surah = testSurahs.singleWhere((value) => value.number == 2);
+    final verse = testQuranVerses.singleWhere(
+      (value) => value.surahNumber == 2 && value.verseNumber == 255,
+    );
+    final widgetData = QuranHomeWidgetData.fromVerse(
+      surah: surah,
+      verse: verse,
+    );
+    final router = ProviderScope.containerOf(
+      tester.element(find.byType(QuranApp)),
+    ).read(appRouterProvider);
+    router.go(QuranHomeWidgetData.routeLocation(widgetData.widgetUri)!);
+    await tester.pumpAndSettle();
+
+    final targetVerse = find.byKey(const ValueKey('verse-row-2-255'));
+    expect(targetVerse, findsOneWidget);
+    final targetRect = tester.getRect(targetVerse);
+    final screenHeight =
+        tester.view.physicalSize.height / tester.view.devicePixelRatio;
+    expect(targetRect.top, greaterThan(0));
+    expect(targetRect.top, lessThan(screenHeight));
+    expect(
+      find.descendant(
+        of: find.byKey(const ValueKey('audio-current-verse')),
+        matching: find.byKey(
+          ValueKey('verse-arabic-${verse.globalVerseNumber}'),
+        ),
+      ),
+      findsOneWidget,
+    );
+  });
+
   testWidgets('Al-Fatihah keeps Bismillah as its numbered verse', (
     tester,
   ) async {
@@ -400,7 +440,7 @@ void main() {
     );
   });
 
-  testWidgets('audio status highlights its matching verse in the reader', (
+  testWidgets('audio status highlights and scrolls to the current verse', (
     tester,
   ) async {
     final audioController = _TestQuranAudioController();
@@ -418,14 +458,49 @@ void main() {
         selectedReciterId: 'ar.alafasy',
         playing: true,
         surahNumber: 2,
-        verseNumber: 1,
-        globalVerseNumber: 8,
+        verseNumber: 50,
+        globalVerseNumber: 57,
+        position: Duration(seconds: 5),
       ),
     );
-    await tester.pump();
+    await tester.pumpAndSettle();
 
     expect(find.byKey(const ValueKey('audio-current-verse')), findsOneWidget);
-    expect(find.byKey(const ValueKey('verse-arabic-8')), findsOneWidget);
+    expect(find.byKey(const ValueKey('verse-arabic-57')), findsOneWidget);
+    final currentVerse = tester.getRect(
+      find.byKey(const ValueKey('audio-current-verse')),
+    );
+    expect(
+      currentVerse.top,
+      lessThan(tester.view.physicalSize.height / tester.view.devicePixelRatio),
+    );
+    expect(currentVerse.bottom, greaterThan(0));
+
+    await tester.drag(
+      find.byKey(const PageStorageKey<String>('quran-reading-scroll-2')),
+      const Offset(0, -1800),
+    );
+    await tester.pumpAndSettle();
+    audioController.emit(
+      const QuranAudioStatus(
+        isSupported: true,
+        selectedReciterId: 'ar.alafasy',
+        playing: true,
+        surahNumber: 2,
+        verseNumber: 50,
+        globalVerseNumber: 57,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.byKey(const ValueKey('audio-current-verse')), findsOneWidget);
+    final repeatedVerse = tester.getRect(
+      find.byKey(const ValueKey('audio-current-verse')),
+    );
+    expect(
+      repeatedVerse.top,
+      lessThan(tester.view.physicalSize.height / tester.view.devicePixelRatio),
+    );
   });
 
   testWidgets('open reader follows automatic Surah playback transitions', (
@@ -458,31 +533,21 @@ void main() {
           .data,
       testSurahs[2].arabicName,
     );
-    expect(find.byKey(const ValueKey('verse-row-3-1')), findsOneWidget);
+    expect(find.byKey(const ValueKey('verse-row-3-1')), findsWidgets);
   });
 
-  testWidgets('Settings exposes data and font attribution', (tester) async {
+  testWidgets('Settings omits About and preserves other options', (
+    tester,
+  ) async {
     await tester.pumpWidget(await createTestApp());
     await pumpUi(tester);
     await tester.tap(find.byKey(const ValueKey('navigation-settings')));
     await pumpUi(tester);
 
-    final attributionTile = find.byKey(const ValueKey('data-attribution'));
-    await tester.scrollUntilVisible(
-      attributionTile,
-      300,
-      scrollable: find.descendant(
-        of: find.byKey(const ValueKey('settings-scroll-view')),
-        matching: find.byType(Scrollable),
-      ),
-    );
-    await tester.tap(attributionTile);
-    await pumpUi(tester);
-
-    expect(find.byType(AboutDialog), findsOneWidget);
-    expect(find.textContaining('CC BY 3.0'), findsOneWidget);
-    expect(find.textContaining('CC BY 4.0'), findsOneWidget);
-    expect(find.textContaining('OFL 1.1'), findsOneWidget);
+    expect(find.text('دەربارە'), findsNothing);
+    expect(find.byKey(const ValueKey('language-selector')), findsOneWidget);
+    expect(find.byKey(const ValueKey('theme-selector')), findsOneWidget);
+    expect(find.byKey(const ValueKey('quran-font-size')), findsOneWidget);
     await tester.binding.handlePopRoute();
     await pumpUi(tester);
   });

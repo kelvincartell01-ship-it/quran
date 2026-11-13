@@ -16,10 +16,12 @@ dependencies:
     sdk: flutter
   flutter_riverpod: ^3.5.0
   go_router: ^18.1.4
+  home_widget: ^0.10.0
   intl: ^0.20.3
   just_audio: ^0.10.6
   path_provider: ^2.1.5
   permission_handler: ^13.0.2
+  scrollable_positioned_list: ^0.3.8
   shared_preferences: ^2.5.6
   url_launcher: 6.3.3
 
@@ -27,11 +29,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
 
 flutter:
   generate: true
   uses-material-design: true
   assets:
+    - assets/branding/quran_icon_prepared.png
     - assets/data/audio_reciters.json
     - assets/data/surahs.json
     - assets/data/quran-uthmani.json
@@ -42,3 +46,13 @@ flutter:
     - family: AmiriQuran
       fonts:
         - asset: assets/fonts/AmiriQuran.ttf
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/branding/quran_icon_prepared.png
+  remove_alpha_ios: true
+  background_color_ios: "#013629"
+  adaptive_icon_background: "#013629"
+  adaptive_icon_foreground: assets/branding/quran_icon_prepared.png
+  adaptive_icon_foreground_inset: 0

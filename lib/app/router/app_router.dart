@@ -30,6 +30,9 @@ final appRouterProvider = Provider<GoRouter>((ref) {
                             state.pathParameters['surahNumber'] ?? '',
                           ) ??
                           0,
+                      initialVerseNumber: int.tryParse(
+                        state.uri.queryParameters['ayah'] ?? '',
+                      ),
                     ),
                   ),
                 ],
